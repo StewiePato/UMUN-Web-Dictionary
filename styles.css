@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.dictionary-title {
+    text-align: center;
+    color: #333;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 48px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    column-count: 2;
+    column-gap: 40px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+.container h2 {
+    column-span: all;
+    margin-top: 0;
+    color: #464646;
+}
+.entry {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    break-inside: avoid;
+}
+.entry h3 {
+    margin-top: 0;
+    color: #4798a3;
+}
+.entry small {
+    font-size: 12px;
+    color: #888;
+}
+.entry p {
+    color: #777;
+}
+.entry .translation {
+    font-style: italic;
+    color: #555;
+}
+.loading-spinner{
+    width:30px;
+    height:30px;
+    border:2px solid indigo;
+    border-radius:50%;
+    border-top-color:#0001;
+    display:inline-block;
+    animation:loadingspinner .7s linear infinite;
+  }
+  @keyframes loadingspinner{
+    0%{
+      transform:rotate(0deg)
+    }
+    100%{
+      transform:rotate(360deg)
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4798a3;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #31676e;
+}
+
+.barra-letras {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.barra-letras a {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease; 
+}
+
+.barra-letras a:hover {
+    background-color: #ddd;
+}
+html {
+    scroll-behavior: smooth;
+}

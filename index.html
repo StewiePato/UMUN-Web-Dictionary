@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- BS JavaScript -->
+    <script src="jquery.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Diccionario UMUN</title>
+</head>
+<body>
+  <h1 class="dictionary-title">Diccionario UMUN</h1>
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Buscar..." onchange="search(this.value)">
+    <button type="submit"><i class="fa fa-search" onclick='search(document.getElementById("search").value)'></i></button>
+  </div>
+  <div class="barra-letras">
+    <a href="#A">A</a>
+    <a href="#B">C</a>
+    <a href="#D">D</a>
+    <a href="#E">E</a>
+    <a href="#F">F</a>
+    <a href="#G">G</a>
+    <a href="#I">I</a>
+    <a href="#J">J</a>
+    <a href="#K">K</a>
+    <a href="#L">L</a>
+    <a href="#M">M</a>
+    <a href="#N">N</a>
+    <a href="#O">O</a>
+    <a href="#P">P</a>
+    <a href="#R">R</a>
+    <a href="#S">S</a>
+    <a href="#T">T</a>
+    <a href="#U">U</a>
+    <a href="#V">V</a>
+    <a href="#X">X</a>
+    <a href="#Y">Y</a>
+    <a href="#Z">Z</a>
+  </div>
+<!--WaitingModal -->
+    <div class="modal" id="modal-loading" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-body text-center">
+              <div class="loading-spinner mb-2"></div>
+               <div>Loading</div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script>
+      $('#modal-loading').modal('hide')
+    </script>
+    <iframe src="https://cors-anywhere.herokuapp.com/"></iframe>
+</body>
+</html>
