@@ -1,14 +1,13 @@
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1hv-NzuCEbHF0H5mnTHFOCmqKLVvrwhBaW8hJ419L8Hw/gviz/tq?tqx=out:csv&sheeh2t=Listado'
-const PROXY_URL = 'https://cors-anywhere.herokuapp.com/'
+const PROXY_URL = 'https://corsproxy.io/?'
 let global_list = []
 $(document).ready(function(){
-    getCorsAuth()
     loadWords()
 })
 
 function loadWords(){
     $('#modal-loading').modal('show')
-    $.get(PROXY_URL + SHEET_URL, function(data){
+    $.get(PROXY_URL + encodeURIComponent(SHEET_URL), function(data){
         parseDoc(data)
         $('#modal-loading').modal('hide')
     });
@@ -29,15 +28,6 @@ function parseDoc(csvContent){
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function getCorsAuth(){
-    try{
-        $("iframe").contents().find("form")[0].submit()
-    }catch{
-        console.log("Access already granted")
-    }
-    $("iframe").remove();
 }
 
 function drawRows(rows){
