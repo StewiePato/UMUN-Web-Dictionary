@@ -26,7 +26,7 @@
 <body>
   <h1 class="dictionary-title">Diccionario UMUN</h1>
   <div class="search-container">
-    <input type="text" id="search" placeholder="Buscar..." onchange="search(this.value)">
+    <input type="text" id="search" placeholder="Buscar..." onkeyup="search(this.value)">
     <button type="submit"><i class="fa fa-search" onclick='search(document.getElementById("search").value)'></i></button>
   </div>
   <div class="barra-letras">
