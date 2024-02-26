@@ -2,6 +2,7 @@ const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1hv-NzuCEbHF0H5mnTHFOC
 const PROXY_URL = 'https://corsproxy.io/?'
 let global_list = []
 $(document).ready(function(){
+    document.getElementById("autoFocusSearchCB").checked = localStorage.getItem('autoFocusSearch') == 'true'
     loadWords()
 })
 
@@ -73,3 +74,17 @@ function search(goal){
         }
     });
 }
+
+let isSearchFocused = false;
+document.addEventListener("keyup", (event) => {
+    if(localStorage.getItem('autoFocusSearch') == 'false'){
+        return
+    }
+    if(isSearchFocused){
+        return 
+    }
+    if(event.keyCode >= 65 && event.keyCode <= 122){
+        $("#search").focus()
+        $("#search").val($("#search").val() + event.key)
+    }
+});
