@@ -96,7 +96,7 @@ input[type="text"] {
     outline: none;
 }
 
-button {
+.search-box > button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #4798a3;
@@ -139,3 +139,9 @@ html {
   input[type="checkbox"] {
     transform: scale(1.5); /* Ajusta el tamaño del checkbox */
   }
+
+#menu {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+}

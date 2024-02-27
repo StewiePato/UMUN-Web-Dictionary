@@ -34,6 +34,18 @@ function parseDoc(csvContent){
             });
             translations = translations.substring(0, translations.length-1)
             global_list.push([word, type, def, translations])
+            if(row[4] != null && row[4] != '' && row[4] != 'Sin Derivaciones'){
+                let firstDerivationUmun = capitalizeFirstLetter(row[4])
+                let firstDerivationType = row[5]
+                let firstDerivationEsp = capitalizeFirstLetter(row[6])
+                global_list.push([firstDerivationUmun, firstDerivationType, `<b>Deriva de:</b>${word}\n${def}`, firstDerivationEsp])
+            }
+            if(row[7] != null && row[7] != ''&& row[7] != 'Sin Derivaciones'){
+                let secondDerivationUmun = capitalizeFirstLetter(row[7])
+                let secondDerivationType = row[8]
+                let secondDerivationEsp = capitalizeFirstLetter(row[9])
+                global_list.push([secondDerivationUmun, secondDerivationType, `<b>Deriva de:</b>${word}\n${def}`, secondDerivationEsp])
+            }
         }
     }
     drawRows(global_list)
@@ -63,11 +75,18 @@ function drawRows(rows){
     }
 }
 
-function search(goal){
+function search(){
+    let goal = $("#search").val()
+    let type = $("#menu").val()
     $(".container").each(function(index, element) {
         $(element).remove();
     });
-    drawRows(global_list.filter((row) => row[0].toUpperCase().startsWith(goal.toUpperCase()) || row[3].split("/").some(function(e){return e.toUpperCase().startsWith(("<span>" + goal).toUpperCase())})))
+    let filteredList = global_list.filter((row) => row[0].toUpperCase().startsWith(goal.toUpperCase()) || row[3].split("/").some(function(e){return e.toUpperCase().startsWith(("<span>" + goal).toUpperCase())}))
+    if(type != ''){
+        drawRows(filteredList.filter((row) => row[1].includes(type)))
+    }else{
+        drawRows(filteredList)
+    }
     $("span").each(function(index, element) {
         if($(element).html().toUpperCase().startsWith(goal.toUpperCase()) && goal != ''){
             $(element).addClass("highlighted")
