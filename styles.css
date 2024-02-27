@@ -132,3 +132,10 @@ button:hover {
 html {
     scroll-behavior: smooth;
 }
+.checkbox-container {
+    text-align: center;
+  }
+  
+  input[type="checkbox"] {
+    transform: scale(1.5); /* Ajusta el tamaño del checkbox */
+  }

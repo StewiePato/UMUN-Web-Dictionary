@@ -26,10 +26,13 @@
 <body>
   <h1 class="dictionary-title">Diccionario UMUN</h1>
   <div class="search-container">
-    <input type="text" id="search" placeholder="Buscar..." onkeyup="search(this.value)" onfocusout="isSearchFocused = true" onfocusout="isSearchFocused = false">
+    <input type="text" id="search" placeholder="Buscar..." onkeyup="search(this.value)" onfocus="isSearchFocused = true" onfocusout="isSearchFocused = false">
     <button type="submit"><i class="fa fa-search" onclick='search(document.getElementById("search").value)'></i></button>
   </div>
-  <input type="checkbox" id="autoFocusSearchCB" onchange="localStorage.setItem('autoFocusSearch', this.checked);console.log(this.checked)">asdad
+  <div class="checkbox-container">
+    <input type="checkbox" id="autoFocusSearchCB" onchange="localStorage.setItem('autoFocusSearch', this.checked);console.log(this.checked)">
+    <label for="miCheckbox">Busqueda rápida</label>
+  </div>
   <div class="barra-letras">
     <a href="#A">A</a>
     <a href="#B">C</a>
