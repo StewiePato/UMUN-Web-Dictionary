@@ -1,5 +1,5 @@
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1hv-NzuCEbHF0H5mnTHFOCmqKLVvrwhBaW8hJ419L8Hw/gviz/tq?tqx=out:csv&sheeh2t=Listado'
-const PROXY_URL = 'https://corsproxy.io/?'
+const PROXY_URL = 'https://proxy.cors.sh/'
 let global_list = []
 $(document).ready(function(){
     document.getElementById("autoFocusSearchCB").checked = localStorage.getItem('autoFocusSearch') == 'true'
