@@ -1,6 +1,5 @@
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1hv-NzuCEbHF0H5mnTHFOCmqKLVvrwhBaW8hJ419L8Hw/gviz/tq?tqx=out:csv&sheeh2t=Listado'
-const PROXY_URL = '
-https://corsproxy.io/? '
+const PROXY_URL = 'https://corsproxy.io/?'
 let global_list = []
 $(document).ready(function(){
     document.getElementById("autoFocusSearchCB").checked = localStorage.getItem('autoFocusSearch') == 'true'
@@ -59,6 +58,9 @@ function capitalizeFirstLetter(string) {
 function drawRows(rows){
     let lastLetter = ''
     for(row of rows){
+        if(row[0].charAt(0).toUpperCase().includes("#")){
+            continue
+        }
         if(row[0].charAt(0).toUpperCase() != lastLetter){
             lastLetter = row[0].charAt(0).toUpperCase()
             let container = `<div class="container" id="${lastLetter}_container"></div>`
